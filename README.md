@@ -9,7 +9,7 @@ Project overview:
 
 Workflow:
 
-raw_data_set -> data-processing.ipynb -> prepared-data-file -> model-building.ipynb
+```raw_data_set -> data-processing.ipynb -> prepared-data-file -> model-building.ipynb```
 
 ## Data Cleaning
 
@@ -23,7 +23,9 @@ There are not missing values in dataset.
 
 ![Cover Type distribution plot](/images/cover_type_distribution.png)
 
-### 2. Visualiziation of variables with distribution, bar and box plots and
+### 2. Visualiziation of variables with distribution, bar and box plots
+It is noticable that most of the variables are left or right skewed with present outliers.
+
 Elevation/Aspect/Slope:
 ![Elevation plot](/images/Elevation_distribution.png)
 ![Aspect plot](/images/Aspect_distribution.png)
@@ -56,17 +58,17 @@ Detected 7 correlated features:
 Heatmap of all features:
 ![Collinearity heatmap](/images/all_correlations.png)
 
-*Zero importance features - using Gradient Boosting Model
-*Low importance features - 
+- Zero importance features - using Gradient Boosting Model
+- Low importance features - 
 
 In total 28 features were removed as not important for the classification model building.
 
 ### 4. Normalization for continuous variables
 
 Continuous variables were normalized together with outliers removal using different techniques and experimenting with data distributions retreived:
-*Gaussian aproximation
-*Quantiles normalization
-*Yeo-Johnson PowerTransformer method (available in Scikit-Learn >=0.20)
+- Gaussian aproximation
+- Quantiles normalization
+- Yeo-Johnson PowerTransformer method (available in Scikit-Learn >=0.20)
 
 Latest showed the best performances and was used for data processing.
 
@@ -87,17 +89,17 @@ This is Multiclass classification problem since we are predicting the probabilit
 
 **SVM Classifier**
 
-Initial run of SVM model with parameters: kernel=linear and C=1: Accuracy=0.79, F1-Score=0.78
+Initial run of SVM model with parameters: ```kernel=linear and C=1: Accuracy=0.79, F1-Score=0.78```
 
 SVM model after tuning with *GridSearchCV* : C, gamma, kernel and degree.
 
-Best parameters selected by *GridSearchCV*: C=1, gamma=1, kernel=rbf, degree=1
+Best parameters selected by *GridSearchCV*: ```C=1, gamma=1, kernel=rbf, degree=1```
 
 ![SVM ROC](/images/svm_rbf_roc.png)
 
-SVM Accuracy=0.84
+```SVM Accuracy=0.84```
 
-SVM F1-Score=0.84
+```SVM F1-Score=0.84```
 
 ### 3. Explore ensemble model: **XGBoost**
 
@@ -105,17 +107,17 @@ SVM F1-Score=0.84
 
 Initial XGB model parameters
 
-xgb.XGBClassifier(learning_rate=0.1,
-                    n_estimators=1000,
-                    max_depth=5,
-                    min_child_weight=1,
-                    gamma=0,
-                    subsample=0.8,
-                    colsample_bytree=0.8,
-                    objective='multi:softmax',
-                    nthread=4,
-                    num_class=7,
-                    seed=27)
+```xgb.XGBClassifier(learning_rate=0.1,```
+                    ```n_estimators=1000,```
+                    ```max_depth=5,```
+                    ```min_child_weight=1,```
+                    ```gamma=0,```
+                    ```subsample=0.8,```
+                    ```colsample_bytree=0.8,```
+                    ```objective='multi:softmax',```
+                    ```nthread=4,```
+                    ```num_class=7,```
+                    ```seed=27)```
 F1-Score: 0.84
 ![XGB mean logloss plot](/images/xgb_mlogloss.png)
 ![XGB mean error plot](/images/xlb_merror.png)
@@ -131,8 +133,8 @@ Best parameters/mean selected by *GridSearchCV*:
 
 Our XGBoost model pays high attention on the Soil Type + Elevation variables. This could be due to the fact that there are only 44 customers with 'unknown' marital status, hence to reduce bias, our xgb model assigns more weight to 'unknown' feature.
 
-XGBoost Accuracy: 0.8642745709828393
-XGBoost F1-Score (Micro): 0.8642745709828393
+```XGBoost Accuracy: 0.8642745709828393```
+```XGBoost F1-Score (Micro): 0.8642745709828393```
 
 Final XGBoost model is selected since it gives higher F1-score and accuracy. Performances can be evaluated with further tuning parameter values for the model.
 
