@@ -21,7 +21,11 @@ There are not missing values in dataset.
 
 ### 1. Explore the distribution of classes in Cover Type
 
-![Cover Type distribution plot](/images/cover_type_distribution.png)
+<table border=0>
+  <tr>
+    <td valign="top"><img src="/images/cover_type_distribution.png" width="60%" height="60%"></td>
+  </tr> 
+</table>
 
 ### 2. Visualiziation of variables with distribution, bar and box plots
 It is noticable that most of the variables are left or right skewed with present outliers.
@@ -65,13 +69,13 @@ Detected 7 correlated features:
   <tr>
     <td valign="top"><img src="/images/correlated_features.png"></td>
   </tr> 
- </table>
+</table>
 
 <table border=0>
   <tr>
     <td valign="top"><img src="/images/all_correlations.png"></td>
   </tr> 
- </table>
+</table>
 
 - Zero importance features - using Gradient Boosting Model
 - Low importance features - 
@@ -82,7 +86,7 @@ In total 28 features were removed as not important for the classification model 
   <tr>
     <td valign="top"><img src="/images/feature_importance.png"></td>
   </tr> 
- </table>
+</table>
 
 ### 4. Normalization for continuous variables
 
