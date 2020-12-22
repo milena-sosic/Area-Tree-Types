@@ -3,7 +3,7 @@
 ## Goal of the project is to build a model that predicts what types of trees grow in an area
 
 Project overview:
-1. Created a tool to predict what types of trees grow in an area
+1. Created a model to predict what types of trees grow in an area
 2. SVM Classifier and XGBoost classifiers are trained with GridSearchCV to get the best model
 3. Created models  with Pickle which are ready for deployment
 
@@ -24,13 +24,25 @@ There are not missing values in dataset.
 ![Cover Type distribution plot](/images/cover_type_distribution.png)
 
 ### 2. Discover any presence of multicollinearity and its degree with a heatmap
+For this purpose Feature Selector tool is used: [Feature Selector](https://github.com/WillKoehrsen/feature-selector)
 
-Heatmap of all features:
-![Collinearity heatmap](/images/all_correlations.png)
+It contains wide range of functions for qualitative datasets analysis such as identification of:
+
+Missing values above particular threshold - set on 0.5
+0 features
+Single unique values
+0 features
+Colinear features above particular threshold - set on 0.5
+7 features - 'Vertical_Distance_To_Hydrology', 'Hillshade_9am', 'Hillshade_Noon', 'Hillshade_3pm', 'Wilderness_Area3', 'Wilderness_Area4', 'Soil_Type29'
 
 Detected 7 correlated features:
 ![Collinearity-correlated features](/images/correlated_features.png)
 
+Heatmap of all features:
+![Collinearity heatmap](/images/all_correlations.png)
+Zero importance features
+Low importance features
+17 features identified
 ### 3. Visualiziation of variables with distribution, bar and box plots and
 Elevation/Aspect/Slope:
 ![Elevation plot](/images/Elevation_distribution.png)
@@ -54,13 +66,16 @@ Gaussian aproximation
 
 ### 5. Randomized undersampling
 
-There is a custom script to undersample dataset into train and test sets using the stratify strategy. Train size 80%, Validation set and Test set 10% each.
+Package [imblearn](https://imbalanced-learn.readthedocs.io/en/stable/api.html) was used to undersample multi-class dataset into using the RandomUnderSampler strategy. 
 
 ## Model Building
 
+This is Multiclass classification problem since we are predicting the probabilities of the cover type label which contains 7 different values.
+
 **Metrics** for evaluating models: 
-1. This is Multiclass classification problem since we are predicting the probabilities of the cover type label which contains 7 different values.
-2. F1-Score and Accuracy
+1. F1-Score and Accuracy
+2. ROC and AUC curves
+3. Confussion matrix
 
 ### 2. Baseline model:  **SVM Classifier**
 
@@ -69,7 +84,8 @@ There is a custom script to undersample dataset into train and test sets using t
 Initial run of SVM model with parameters: kernel=linear and C=1: Accuracy=0.79, F1-Score=0.78
 
 SVM model after tuning with *GridSearchCV* : C, gamma, kernel and degree.
-Best parameters: C=1, gamma=1, kernel=rbf, degree=1
+
+Best parameters selected by *GridSearchCV*: C=1, gamma=1, kernel=rbf, degree=1
 
 ![SVM ROC](/images/svm_rbf_roc.png)
 
@@ -81,16 +97,30 @@ SVM F1-Score=0.84
 
 **XGBoost**
 
-Initial XGB model
+Initial XGB model parameters
 
+xgb.XGBClassifier(learning_rate=0.1,
+                    n_estimators=1000,
+                    max_depth=5,
+                    min_child_weight=1,
+                    gamma=0,
+                    subsample=0.8,
+                    colsample_bytree=0.8,
+                    objective='multi:softmax',
+                    nthread=4,
+                    num_class=7,
+                    seed=27)
+F1-Score: 0.84
 ![XGB mean logloss plot](/images/xgb_mlogloss.png)
 ![XGB mean error plot](/images/xlb_merror.png)
 ![XGB feature importance plot](/images/xgb_feature_importance.png)
 
 XGB model after tuning with *GridSearchCV* : max_depth, min_child_weight and reg_alpha
+Best parameters/mean selected by *GridSearchCV*: 
 
-![mean logloss plot](/images/plot18.png)![mean error plot](/images/plot19.png)
-
+{'best_mean': 0.8651985002262362,
+  'best_param': {'max_depth': 9, 'min_child_weight': 1}})
+  
 ![XGB ROC](/images/xlb_roc.png)
 
 Our XGBoost model pays high attention on the Soil Type + Elevation variables. This could be due to the fact that there are only 44 customers with 'unknown' marital status, hence to reduce bias, our xgb model assigns more weight to 'unknown' feature.
