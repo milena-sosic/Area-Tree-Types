@@ -63,13 +63,13 @@ Detected 7 correlated features:
 
 <table border=0>
   <tr>
-    <td valign="top"><img src="/images/correlated_features.png" width=300 height=300></td>
+    <td valign="top"><img src="/images/correlated_features.png"></td>
   </tr> 
  </table>
 
 <table border=0>
   <tr>
-    <td valign="top"><img src="/images/all_correlations.png" width=300 height=300></td>
+    <td valign="top"><img src="/images/all_correlations.png"></td>
   </tr> 
  </table>
 
@@ -80,7 +80,7 @@ In total 28 features were removed as not important for the classification model 
 
 <table border=0>
   <tr>
-    <td valign="top"><img src="/images/feature_importance.png" width=300 height=400></td>
+    <td valign="top"><img src="/images/feature_importance.png"></td>
   </tr> 
  </table>
 
@@ -88,7 +88,7 @@ In total 28 features were removed as not important for the classification model 
 
 Continuous variables were normalized together with outliers removal using different techniques and experimenting with data distributions retreived:
 - Gaussian aproximation
-- Quantiles normalization
+- Quantiles normalization with QuantileTransformer (available in Scikit-Learn)
 - Yeo-Johnson PowerTransformer method (available in Scikit-Learn >=0.20)
 
 Latest showed the best performances and was used for data processing.
