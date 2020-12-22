@@ -34,16 +34,16 @@ Heatmap of all features:
 ![Collinearity-correlated features](/images/correlated_features.png)
 
 ### 3. Visualiziation of variables with distribution, bar and box plots and
-
+Elevation/Aspect/Slope:
 ![Elevation plot](/images/Elevation_distribution.png)
 ![Aspect plot](/images/Aspect_distribution.png)
 ![Slope plot](/images/Slope_distribution.png)
-
+Horizontal/Vertical Distance:
 ![Horizontal Distance to Fire Points plot](/images/horizontal_distance_to_fire_points.png)
 ![Horizontal Distance to Hydrology plot](/images/horizontal_distance_to_hydrology_distribution.png)
 ![Horizontal Distance to Roadways plot](/images/horizontal_distance_to_roadways_distribution.png)
 ![Vertical Distance to HYdrology plot](/images/vertical_distrance_to_hydrology_distribution.png)
-
+Hillshade:
 ![Hillshade_9am plot](/images/hillshade_9am.png)
 ![Hillshade_noon plot](/images/hillshade_noon.png)
 ![Hillshade_3pm plot](/images/hillshade_3pm.png)
@@ -53,6 +53,7 @@ Heatmap of all features:
 Continuous variables were normalized using different techniques and experimenting with data distributions retreived:
 Gaussian aproximation
 
+
 ### 5. Randomized undersampling
 
 There is a custom script to undersample dataset into train and test sets using the stratify strategy. Train size 80%, Validation set and Test set 10% each.
@@ -61,15 +62,16 @@ There is a custom script to undersample dataset into train and test sets using t
 
 **Metrics** for evaluating models: 
 1. This is Multiclass classification problem since we are predicting the probabilities of the cover type label which contains 7 different values.
-2. F1-Score(Micro) since we have imbalanced classes of labels
+2. F1-Score and Accuracy
 
 ### 2. Baseline model:  **SVM Classifier**
 
 **SVM Classifier**
 
-I picked RF Classifer simply because it runs fast and I am able to use GridSearchCV to iterate to the best model possible efficiently. 
-After initializing and tuning my RandomForestClassifier model with GridSearchCV, I got a train accuracy of 1.0 and test 
-accuracy of 0.77688 which shows overfitting.
+Initial SVM model
+
+SVM model after tuning with *GridSearchCV* : C, gamma, kernel and degree.
+Best parameters: C=1, gamma=1, kernel=rgb, degree=1
 
 ![SVM ROC](/images/svm_rbf_roc.png)
 
@@ -85,6 +87,7 @@ Initial XGB model
 
 ![XGB mean logloss plot](/images/xgb_mlogloss.png)
 ![XGB mean error plot](/images/xlb_merror.png)
+![XGB feature importance plot](/images/xgb_feature_importance.png)
 
 XGB model after tuning with *GridSearchCV* : max_depth, min_child_weight and reg_alpha
 
