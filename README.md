@@ -23,27 +23,7 @@ There are not missing values in dataset.
 
 ![Cover Type distribution plot](/images/cover_type_distribution.png)
 
-### 2. Discover any presence of multicollinearity and its degree with a heatmap
-For this purpose Feature Selector tool is used: [Feature Selector](https://github.com/WillKoehrsen/feature-selector)
-
-It contains wide range of functions for qualitative datasets analysis such as identification of:
-
-Missing values above particular threshold - set on 0.5
-0 features
-Single unique values
-0 features
-Colinear features above particular threshold - set on 0.5
-7 features - 'Vertical_Distance_To_Hydrology', 'Hillshade_9am', 'Hillshade_Noon', 'Hillshade_3pm', 'Wilderness_Area3', 'Wilderness_Area4', 'Soil_Type29'
-
-Detected 7 correlated features:
-![Collinearity-correlated features](/images/correlated_features.png)
-
-Heatmap of all features:
-![Collinearity heatmap](/images/all_correlations.png)
-Zero importance features
-Low importance features
-17 features identified
-### 3. Visualiziation of variables with distribution, bar and box plots and
+### 2. Visualiziation of variables with distribution, bar and box plots and
 Elevation/Aspect/Slope:
 ![Elevation plot](/images/Elevation_distribution.png)
 ![Aspect plot](/images/Aspect_distribution.png)
@@ -58,11 +38,37 @@ Hillshade:
 ![Hillshade_noon plot](/images/hillshade_noon.png)
 ![Hillshade_3pm plot](/images/hillshade_3pm.png)
 
+### 2. Discover any presence of multicollinearity and its degree with a heatmap
+For this purpose Feature Selector tool is used: [Feature Selector](https://github.com/WillKoehrsen/feature-selector)
+
+It contains wide range of functions for qualitative datasets analysis such as identification of:
+
+*Missing values above particular threshold - set on 0.5
+0 features
+*Single unique values
+0 features
+*Colinear features above particular threshold - set on 0.5
+7 features - 'Vertical_Distance_To_Hydrology', 'Hillshade_9am', 'Hillshade_Noon', 'Hillshade_3pm', 'Wilderness_Area3', 'Wilderness_Area4', 'Soil_Type29'
+
+Detected 7 correlated features:
+![Collinearity-correlated features](/images/correlated_features.png)
+
+Heatmap of all features:
+![Collinearity heatmap](/images/all_correlations.png)
+
+*Zero importance features - using Gradient Boosting Model
+*Low importance features - 
+
+In total 28 features were removed as not important for the classification model building.
+
 ### 4. Normalization for continuous variables
 
-Continuous variables were normalized using different techniques and experimenting with data distributions retreived:
-Gaussian aproximation
+Continuous variables were normalized together with outliers removal using different techniques and experimenting with data distributions retreived:
+*Gaussian aproximation
+*Quantiles normalization
+*Yeo-Johnson PowerTransformer method (available in Scikit-Learn >=0.20)
 
+Latest showed the best performances and was used for data processing.
 
 ### 5. Randomized undersampling
 
@@ -77,7 +83,7 @@ This is Multiclass classification problem since we are predicting the probabilit
 2. ROC and AUC curves
 3. Confussion matrix
 
-### 2. Baseline model:  **SVM Classifier**
+### 2. Model:  **SVM Classifier**
 
 **SVM Classifier**
 
