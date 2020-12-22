@@ -17,8 +17,6 @@ raw_data_set -> data-processing.ipynb -> prepared-data-file -> model-building.ip
 
 There are not missing values in dataset.
 
-### 2. Removed rows with no touchpoints value / nTouchpoints = 0
-
 ## EDA
 
 ### 1. Explore the distribution of classes in Cover Type
@@ -27,10 +25,10 @@ There are not missing values in dataset.
 
 ### 2. Discover any presence of multicollinearity and its degree with a heatmap
 
-Detected 7 correlated features:
+Heatmap of all features:
 ![Collinearity heatmap](/images/all_correlations.png)
 
-Heatmap of all features:
+Detected 7 correlated features:
 ![Collinearity-correlated features](/images/correlated_features.png)
 
 ### 3. Visualiziation of variables with distribution, bar and box plots and
@@ -68,16 +66,16 @@ There is a custom script to undersample dataset into train and test sets using t
 
 **SVM Classifier**
 
-Initial SVM model
+Initial run of SVM model with parameters: kernel=linear and C=1: Accuracy=0.79, F1-Score=0.78
 
 SVM model after tuning with *GridSearchCV* : C, gamma, kernel and degree.
-Best parameters: C=1, gamma=1, kernel=rgb, degree=1
+Best parameters: C=1, gamma=1, kernel=rbf, degree=1
 
 ![SVM ROC](/images/svm_rbf_roc.png)
 
-SVM Accuracy: 0.84
+SVM Accuracy=0.84
 
-SVM F1-Score (Micro): 0.84
+SVM F1-Score=0.84
 
 ### 3. Explore ensemble model: **XGBoost**
 
@@ -95,13 +93,12 @@ XGB model after tuning with *GridSearchCV* : max_depth, min_child_weight and reg
 
 ![XGB ROC](/images/xlb_roc.png)
 
-Our XGBoost model pays high attention to the 'unknown' marital status. This could be due to the fact that there are only 44 customers with 'unknown' marital status, hence to reduce bias, our xgb model assigns more weight to 'unknown' feature.
+Our XGBoost model pays high attention on the Soil Type + Elevation variables. This could be due to the fact that there are only 44 customers with 'unknown' marital status, hence to reduce bias, our xgb model assigns more weight to 'unknown' feature.
 
-XGBoost Accuracy: 0.9678972712680578
+XGBoost Accuracy: 0.8642745709828393
+XGBoost F1-Score (Micro): 0.8642745709828393
 
-XGBoost F1-Score (Micro): 0.9678972712680578
-
-Final XGBoost model is selected since it gives higher F1-score and accuracy. Performances can be evaluated with further tuning the reg_alpha value for the model.
+Final XGBoost model is selected since it gives higher F1-score and accuracy. Performances can be evaluated with further tuning parameter values for the model.
 
 ## Model Deployment
 
