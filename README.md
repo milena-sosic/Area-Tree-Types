@@ -54,15 +54,19 @@ For this purpose Feature Selector tool is used: [Feature Selector](https://githu
 
 It contains wide range of functions for qualitative datasets analysis such as identification of:
 
-- Missing values above particular threshold - set on 0.5
-0 features
-- Single unique values
-0 features
-- Colinear features above particular threshold - set on 0.5
-7 features - ```'Vertical_Distance_To_Hydrology', 'Hillshade_9am', 'Hillshade_Noon', 'Hillshade_3pm', 'Wilderness_Area3', 'Wilderness_Area4', 'Soil_Type29'```
+- Missing values above particular threshold - set on 0.5 - 0 features
+- Single unique values - 0 features
+- Colinear features above particular threshold - set on 0.5 - 7 features
+```'Vertical_Distance_To_Hydrology', 'Hillshade_9am', 'Hillshade_Noon', 'Hillshade_3pm', 'Wilderness_Area3', 'Wilderness_Area4', 'Soil_Type29'```
 
 Detected 7 correlated features:
-![Collinearity-correlated features](/images/correlated_features.png)
+
+<table border=0>
+  <tr>
+    <td valign="top"><img src="/images/correlated_features.png"></td>
+  </tr> 
+ </table>
+
 
 Heatmap of all features:
 ![Collinearity heatmap](/images/all_correlations.png)
