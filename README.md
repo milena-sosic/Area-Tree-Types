@@ -33,30 +33,21 @@ It is noticable that most of the variables are left or right skewed with present
     <td valign="top"><img src="/images/Elevation_distribution.png"></td>
     <td valign="top"><img src="/images/Aspect_distribution.png"></td>
     <td valign="top"><img src="/images/Slope_distribution.png"></td>
-  </tr>
-  <tr>
-    <td valign="top"><img src="/images/horizontal_distance_to_fire_points.png"></td>
-    <td valign="top"><img src="/images/horizontal_distance_to_hydrology_distribution.png"></td>
-    <td valign="top"><img src="/images/horizontal_distance_to_roadways_distribution.png"></td>
-    <td valign="top"><img src="/images/vertical_distrance_to_hydrology_distribution.png"></td>
-  </tr>
+  </tr>  
    <tr>
     <td valign="top"><img src="/images/hillshade_9am.png"></td>
     <td valign="top"><img src="/images/hillshade_noon.png"></td>
     <td valign="top"><img src="/images/hillshade_3pm.png"></td>
   </tr>
+  <tr>
+    <td valign="top"><img src="/images/horizontal_distance_to_fire_points.png"></td>
+    <td valign="top"><img src="/images/horizontal_distance_to_hydrology_distribution.png"></td>
+    <td valign="top"><img src="/images/horizontal_distance_to_roadways_distribution.png"></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="/images/vertical_distrance_to_hydrology_distribution.png"></td>
+  </tr>
  </table>
-
-
-- Horizontal/Vertical Distance:
-![Horizontal Distance to Fire Points plot](/images/horizontal_distance_to_fire_points.png)
-![Horizontal Distance to Hydrology plot](/images/horizontal_distance_to_hydrology_distribution.png)
-![Horizontal Distance to Roadways plot](/images/horizontal_distance_to_roadways_distribution.png)
-![Vertical Distance to HYdrology plot](/images/vertical_distrance_to_hydrology_distribution.png)
-- Hillshade:
-![Hillshade_9am plot](/images/hillshade_9am.png)
-![Hillshade_noon plot](/images/hillshade_noon.png)
-![Hillshade_3pm plot](/images/hillshade_3pm.png)
 
 ### 2. Discover any presence of multicollinearity and its degree with a heatmap
 For this purpose Feature Selector tool is used: [Feature Selector](https://github.com/WillKoehrsen/feature-selector)
