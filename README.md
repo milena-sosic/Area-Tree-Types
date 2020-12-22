@@ -147,12 +147,11 @@ F1-Score: 0.84
 XGB model after tuning with *GridSearchCV* : max_depth, min_child_weight and reg_alpha
 Best parameters/mean selected by *GridSearchCV*: 
 
-{'best_mean': 0.8651985002262362,
-  'best_param': {'max_depth': 9, 'min_child_weight': 1}})
+```{'best_mean': 0.8651985002262362, 'best_param': {'max_depth': 9, 'min_child_weight': 1}})```
   
 ![XGB ROC](/images/xlb_roc.png)
 
-Our XGBoost model pays high attention on the Soil Type + Elevation variables. This could be due to the fact that there are only 44 customers with 'unknown' marital status, hence to reduce bias, our xgb model assigns more weight to 'unknown' feature.
+XGBoost model pays high attention on the Soil Type + Wilderness Area 1/2 + Elevation variables. 
 
 ```XGBoost Accuracy: 0.8642745709828393```
 ```XGBoost F1-Score (Micro): 0.8642745709828393```
@@ -161,4 +160,4 @@ Final XGBoost model is selected since it gives higher F1-score and accuracy. Per
 
 ## Model Deployment
 
-Pickle file is attached for further deployment of the model into FlaskAPI for productionization.
+Pickle files for both models are uploaded for further deployment and testing.
