@@ -26,16 +26,16 @@ There are not missing values in dataset.
 ### 2. Visualiziation of variables with distribution, bar and box plots
 It is noticable that most of the variables are left or right skewed with present outliers.
 
-Elevation/Aspect/Slope:
+- Elevation/Aspect/Slope:
 ![Elevation plot](/images/Elevation_distribution.png)
 ![Aspect plot](/images/Aspect_distribution.png)
 ![Slope plot](/images/Slope_distribution.png)
-Horizontal/Vertical Distance:
+- Horizontal/Vertical Distance:
 ![Horizontal Distance to Fire Points plot](/images/horizontal_distance_to_fire_points.png)
 ![Horizontal Distance to Hydrology plot](/images/horizontal_distance_to_hydrology_distribution.png)
 ![Horizontal Distance to Roadways plot](/images/horizontal_distance_to_roadways_distribution.png)
 ![Vertical Distance to HYdrology plot](/images/vertical_distrance_to_hydrology_distribution.png)
-Hillshade:
+- Hillshade:
 ![Hillshade_9am plot](/images/hillshade_9am.png)
 ![Hillshade_noon plot](/images/hillshade_noon.png)
 ![Hillshade_3pm plot](/images/hillshade_3pm.png)
@@ -45,12 +45,12 @@ For this purpose Feature Selector tool is used: [Feature Selector](https://githu
 
 It contains wide range of functions for qualitative datasets analysis such as identification of:
 
-*Missing values above particular threshold - set on 0.5
+- Missing values above particular threshold - set on 0.5
 0 features
-*Single unique values
+- Single unique values
 0 features
-*Colinear features above particular threshold - set on 0.5
-7 features - 'Vertical_Distance_To_Hydrology', 'Hillshade_9am', 'Hillshade_Noon', 'Hillshade_3pm', 'Wilderness_Area3', 'Wilderness_Area4', 'Soil_Type29'
+- Colinear features above particular threshold - set on 0.5
+7 features - ```'Vertical_Distance_To_Hydrology', 'Hillshade_9am', 'Hillshade_Noon', 'Hillshade_3pm', 'Wilderness_Area3', 'Wilderness_Area4', 'Soil_Type29'```
 
 Detected 7 correlated features:
 ![Collinearity-correlated features](/images/correlated_features.png)
