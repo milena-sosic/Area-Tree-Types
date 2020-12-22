@@ -31,7 +31,18 @@ Elevation             |  Aspect          |  Slope
 :-------------------------:|:-------------------------:|:-------------------------:
 ![Elevation plot](/images/Elevation_distribution.png) |  ![Aspect plot](/images/Aspect_distribution.png) | ![Slope plot](/images/Slope_distribution.png)
 
-
+<table>
+  <tr>
+    <td>First Screen Page</td>
+     <td>Holiday Mention</td>
+     <td>Elevation/Aspect/Slope</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="/images/Elevation_distribution.png"></td>
+    <td valign="top"><img src="/images/Aspect_distribution.png"></td>
+    <td valign="top"><img src="/images/Slope_distribution.png"></td>
+  </tr>
+ </table>
 
 
 - Horizontal/Vertical Distance:
