@@ -63,18 +63,26 @@ Detected 7 correlated features:
 
 <table border=0>
   <tr>
-    <td valign="top"><img src="/images/correlated_features.png"></td>
+    <td valign="top"><img src="/images/correlated_features.png" width=300 height=300></td>
   </tr> 
  </table>
 
-
-Heatmap of all features:
-![Collinearity heatmap](/images/all_correlations.png)
+<table border=0>
+  <tr>
+    <td valign="top"><img src="/images/all_correlations.png" width=300 height=300></td>
+  </tr> 
+ </table>
 
 - Zero importance features - using Gradient Boosting Model
 - Low importance features - 
 
 In total 28 features were removed as not important for the classification model building.
+
+<table border=0>
+  <tr>
+    <td valign="top"><img src="/images/feature_importance.png" width=300 height=400></td>
+  </tr> 
+ </table>
 
 ### 4. Normalization for continuous variables
 
