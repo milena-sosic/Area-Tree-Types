@@ -25,22 +25,25 @@ There are not missing values in dataset.
 
 ### 2. Visualiziation of variables with distribution, bar and box plots
 It is noticable that most of the variables are left or right skewed with present outliers.
-- Elevation/Aspect/Slope:
 
-Elevation             |  Aspect          |  Slope
-:-------------------------:|:-------------------------:|:-------------------------:
-![Elevation plot](/images/Elevation_distribution.png) |  ![Aspect plot](/images/Aspect_distribution.png) | ![Slope plot](/images/Slope_distribution.png)
+- Continuous numerical variables before normalization:
 
-<table>
-  <tr>
-    <td>First Screen Page</td>
-     <td>Holiday Mention</td>
-     <td>Elevation/Aspect/Slope</td>
-  </tr>
+<table border=0>
   <tr>
     <td valign="top"><img src="/images/Elevation_distribution.png"></td>
     <td valign="top"><img src="/images/Aspect_distribution.png"></td>
     <td valign="top"><img src="/images/Slope_distribution.png"></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="/images/horizontal_distance_to_fire_points.png"></td>
+    <td valign="top"><img src="/images/horizontal_distance_to_hydrology_distribution.png"></td>
+    <td valign="top"><img src="/images/horizontal_distance_to_roadways_distribution.png"></td>
+    <td valign="top"><img src="/images/vertical_distrance_to_hydrology_distribution.png"></td>
+  </tr>
+   <tr>
+    <td valign="top"><img src="/images/hillshade_9am.png"></td>
+    <td valign="top"><img src="/images/hillshade_noon.png"></td>
+    <td valign="top"><img src="/images/hillshade_3pm.png"></td>
   </tr>
  </table>
 
