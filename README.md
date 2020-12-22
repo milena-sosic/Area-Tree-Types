@@ -25,11 +25,15 @@ There are not missing values in dataset.
 
 ### 2. Visualiziation of variables with distribution, bar and box plots
 It is noticable that most of the variables are left or right skewed with present outliers.
-
 - Elevation/Aspect/Slope:
-![Elevation plot](/images/Elevation_distribution.png)
-![Aspect plot](/images/Aspect_distribution.png)
-![Slope plot](/images/Slope_distribution.png)
+
+Elevation             |  Aspect          |  Slope
+:-------------------------:|:-------------------------:|:-------------------------:
+![Elevation plot](/images/Elevation_distribution.png) |  ![Aspect plot](/images/Aspect_distribution.png) | ![Slope plot](/images/Slope_distribution.png)
+
+
+
+
 - Horizontal/Vertical Distance:
 ![Horizontal Distance to Fire Points plot](/images/horizontal_distance_to_fire_points.png)
 ![Horizontal Distance to Hydrology plot](/images/horizontal_distance_to_hydrology_distribution.png)
